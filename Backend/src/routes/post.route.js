@@ -8,6 +8,6 @@ const router = Router();
 router.route("/create-posts").post(verifyJWT, upload.array("uploads"), createPost);
 router.route("/get-posts").get(verifyJWT, getAllPost);
 router.route("/get-posts/user").get(verifyJWT, getPostsByUser);
-router.route("/posts/:postId").put(verifyJWT, updatePost).delete(verifyJWT, deletePost);
+router.route("/update-posts/:postId").put(verifyJWT, upload.array("uploads"), updatePost).delete(verifyJWT, deletePost);
 
 export default router;
