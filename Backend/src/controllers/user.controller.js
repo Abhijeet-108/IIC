@@ -22,10 +22,10 @@ const generateTokens = async(userId) => {
 
 // register
 export const registerUser = asyncHandler(async(req, res) => {
-    const { username, email, password, fullname, phone, collegeId, dept, year } = req.body;
+    const { username, email, password, fullname, phone, collegeId, dept, year, role} = req.body;
 
     if(
-        [username, email, password, fullname, phone, collegeId, dept, year].some((field) => !field)
+        [username, email, password, fullname, phone, collegeId, dept, role].some((field) => !field)
     ) {
         return res.status(400).json({ message: "All fields are required" });
     }
@@ -63,7 +63,8 @@ export const registerUser = asyncHandler(async(req, res) => {
         collegeId,
         dept,
         year,
-        profilePhoto: profilePhoto
+        profilePhoto: profilePhoto,
+        role: role
     });
 
     const createdUser = await User.findById(user._id).select("-password -refreshToken");
@@ -92,7 +93,7 @@ export const loginUser = asyncHandler(async(req, res) => {
     if(!user) throw new ApiError(404, "User not found");
 
     const isPasswordCorrect = await user.isPasswordCorrect(password);
-    if(!isPasswordCorrect) throw new ApiError(401, "Invalid password");
+    if(!isPasswordCorrect) throw new ApiError(401, "Invalid credentials");
 
     const { accessToken, refreshToken } = await generateTokens(user._id);
 
