@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 const userSchema = new mongoose.Schema({
-    user_id: {
+    username: {
         type: String,
         required: true,
         unique: true,
@@ -58,7 +58,7 @@ const userSchema = new mongoose.Schema({
         unique: true,
         uppercase: true,
     },
-    dept:{
+    department:{
         type: String,
         required: [true, 'Department is required'],
         enum: [
@@ -92,14 +92,17 @@ const userSchema = new mongoose.Schema({
         },
         required: true
     },
+    refreshToken: {
+        type: String,
+    },
 }, { timestamps: true })
 
 // Indexes for better query performance
-userSchema.index({ email_id: 1 }, { unique: true });
-userSchema.index({ user_id: 1 }, { unique: true });
+userSchema.index({ email: 1 }, { unique: true });
+userSchema.index({ username: 1 }, { unique: true });
 userSchema.index({ college_id: 1 }, { unique: true });
 userSchema.index({ role: 1 });
-userSchema.index({ dept: 1 });
+userSchema.index({ department: 1 });
 
 
 // middleware for pre-saving user
@@ -113,28 +116,18 @@ userSchema.methods.isPasswordCorrect = async function(password){
     return await bcrypt.compare(password, this.password)
 }
 
-userSchema.statics.findByRole = function(role) {
-  return this.find({ role: role });
-};
-
-userSchema.statics.findByDepartment = function(department) {
-  return this.find({ department: department });
-};
-
-
 userSchema.methods.toJSON = function() {
   const userObject = this.toObject();
   delete userObject.password;
   return userObject;
 };
 
-
 userSchema.methods.generateAccessToken = function(){
     return jwt.sign(
         {
             _id: this._id,
             email: this.email,
-            user_id: this.user_id,
+            username: this.username,
             name: this.name,
         },
         process.env.ACCESS_TOKEN_SECRET,
@@ -154,5 +147,13 @@ userSchema.methods.generateRefreshToken = function(){
         }
     )
 }
+
+userSchema.statics.findByRole = function(role) {
+  return this.find({ role: role });
+};
+
+userSchema.statics.findByDepartment = function(department) {
+  return this.find({ department: department });
+};
 
 export const User = mongoose.model("User", userSchema);
