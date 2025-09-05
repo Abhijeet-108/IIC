@@ -21,6 +21,7 @@ import bookChapterRoutes from "./routes/bookChapter.route.js";
 import copyrightRoutes from "./routes/copyright.route.js";
 import achievementRoutes from "./routes/achievement.route.js";
 import eventRoutes from "./routes/event.route.js";
+import conferenceRoutes from "./routes/conference.route.js";
 
 // routes
 app.use("/api/v1/users", userRouter);
@@ -29,5 +30,6 @@ app.use("/api/bookchapters", bookChapterRoutes);
 app.use("/api/copyrights", copyrightRoutes);
 app.use("/api/achievements", achievementRoutes);
 app.use("/api/events", eventRoutes);
+app.use("/api/conferences", conferenceRoutes);
 
 export { app };
