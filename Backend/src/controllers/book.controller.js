@@ -5,6 +5,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 
 // Create a new book
 export const createBook = asyncHandler(async (req, res) => {
+    // console.log(req.body);
     const { title, authors, isbn, publisherName, year, supportDocument } = req.body;
 
     if (!title || !authors || !isbn || !publisherName || !year) {

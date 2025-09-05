@@ -1,4 +1,4 @@
-import { Copyright } from "../models/copyright.js";
+import { Copyright } from "../models/copyright.model.js";
 
 // Create a new copyright
 export const createCopyright = async (req, res) => {

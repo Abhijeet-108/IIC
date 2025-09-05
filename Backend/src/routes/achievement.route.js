@@ -5,7 +5,7 @@ import {
   getAchievementById,
   updateAchievement,
   deleteAchievement,
-} from "../controllers/achievements.controller.js";
+} from "../controllers/achievments.controller.js";
 
 const router = express.Router();
 

@@ -48,6 +48,7 @@ const patentSchema = new mongoose.Schema({
     supportDocument: {
         type: String,
         trim: true,
+        required: true,
         validate: {
             validator: function(v) {
                 if (!v) return true;
