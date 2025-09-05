@@ -82,16 +82,14 @@ const BookChapterSchema = new mongoose.Schema({
   }
 );
 
-mongooseBookChapterSchema.index({ title: "text", authors: "text", chapterName: "text" });
-mongooseBookChapterSchema.index({ publisherName: 1, year: -1 });
-mongooseBookChapterSchema.index({ year: -1, title: 1 });
-mongooseBookChapterSchema.index({ isbn: 1, chapterName: 1 });
+BookChapterSchema.index({ title: "text", authors: "text", chapterName: "text" });
+BookChapterSchema.index({ publisherName: 1, year: -1 });
+BookChapterSchema.index({ year: -1, title: 1 });
+BookChapterSchema.index({ isbn: 1, chapterName: 1 });
 
 
-mongooseBookChapterSchema.pre("save", function (next) {
+BookChapterSchema.pre("save", function (next) {
   next();
 });
 
-const BookChapter = mongoose.model("BookChapter", BookChapterSchema);
-
-export default BookChapter;
+export const BookChapter = mongoose.model("BookChapter", BookChapterSchema);;
