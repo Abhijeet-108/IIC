@@ -23,6 +23,7 @@ import achievementRoutes from "./src/routes/achievement.route.js";
 import eventRoutes from "./src/routes/event.route.js";
 import patentRoutes from "./src/routes/patent.route.js";
 import journalRoutes from "./src/routes/journal.route.js";
+import conferenceRoutes from "./routes/conference.route.js";
 
 // routes
 app.use("/api/v1/users", userRouter);
@@ -33,5 +34,6 @@ app.use("/api/achievements", achievementRoutes);
 app.use("/api/events", eventRoutes);
 app.use("/api/patents", patentRoutes);
 app.use("/api/journals", journalRoutes);
+app.use("/api/conferences", conferenceRoutes);
 
 export { app };
