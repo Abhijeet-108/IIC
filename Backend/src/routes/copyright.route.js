@@ -6,7 +6,7 @@ import {
   updateCopyright,
   deleteCopyright,
   getByCopyrightNumber,
-} from "../controllers/copyrightController.js";
+} from "../controllers/copyright.controller.js";
 
 const router = express.Router();
 
