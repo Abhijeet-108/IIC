@@ -25,6 +25,7 @@ import patentRoutes from "./src/routes/patent.route.js";
 import journalRoutes from "./src/routes/journal.route.js";
 import conferenceRoutes from "./routes/conference.route.js";
 import organizationRoutes from "./src/routes/organization.route.js";
+import ResearchProfileRoutes from "./src/routes/researchProfile.route.js";
 
 // routes
 app.use("/api/v1/users", userRouter);
@@ -37,5 +38,6 @@ app.use("/api/patents", patentRoutes);
 app.use("/api/journals", journalRoutes);
 app.use("/api/conferences", conferenceRoutes);
 app.use("/api/organizations", organizationRoutes);
+app.use("/api/researchProfiles", ResearchProfileRoutes);
 
 export { app };

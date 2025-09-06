@@ -7,14 +7,15 @@ import { uploadOnCloudinary } from "../utils/cloudinary.utils.js";
 // Create a new achievement
 export const createAchievement = asyncHandler(async (req, res) => {
   const { title,  description, date} = req.body;
+  const files = req.files;
 
   if(!title || !description || !date) {
     throw new ApiError(400, "All fields are required");
   }
 
   let photoPath = null;
-  if (req.files && req.files.length > 0) {
-    const cloudinaryResponse = await uploadOnCloudinary(req.files[0].path);
+  if (files && files.length > 0) {
+    const cloudinaryResponse = await uploadOnCloudinary(files[0].path);
     photoPath = cloudinaryResponse?.url || null;
   }
 

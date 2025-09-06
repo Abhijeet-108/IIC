@@ -10,7 +10,13 @@ import { upload } from "../middlewares/multer.middleware.js";
 
 const router = express.Router();
 
-router.route("/").post(upload.array("photo"), createAchievement).get(getAllAchievements);
-router.route("/:id").get(getAchievementById).put(upload.array("photo"), updateAchievement).delete(deleteAchievement);
+router.route("/")
+    .post(upload.array("photo"), createAchievement)
+    .get(getAllAchievements);
+    
+router.route("/:id")
+    .get(getAchievementById)
+    .put(upload.array("photo"), updateAchievement)
+    .delete(deleteAchievement);
 
 export default router;
