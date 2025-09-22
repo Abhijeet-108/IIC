@@ -1,23 +1,23 @@
 import { 
     createResearchProfile, 
-    getAllResearchProfiles, 
-    getResearchProfileById, 
+    getAllResearchProfiles,
     getResearchProfileByDesignation, 
     getResearchProfileByFacultyId,
     updateResearchProfile,
     deleteResearchProfile
-} from "../controllers/researchProfile.controller";
+} from "../controllers/researchProfile.controller.js";
+import { upload } from "../middlewares/multer.middleware.js";
 import { Router } from "express";
 
 const router = Router();
 
 router.route("/")
-    .post(createResearchProfile)
+    .post(upload.single("photograph"), createResearchProfile)
     .get(getAllResearchProfiles);
 
 router.route("/:id")
     .get(getResearchProfileById)
-    .put(updateResearchProfile)
+    .put(upload.single("photograph"), updateResearchProfile)
     .delete(deleteResearchProfile);
 
 router.route("/designation/:designation")

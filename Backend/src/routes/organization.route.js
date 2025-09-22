@@ -1,4 +1,4 @@
-import { createOrganization, getOrganizations, getOrganizationById, deleteOrganization, updateOrganization, getIncubators, getByCity, getByStage, getByThrustArea, getStartups } from "../controllers/organization.controller";
+import { createOrganization, getOrganizations, getOrganizationById, deleteOrganization, updateOrganization, getIncubators, getByCity, getByStage, getByThrustArea, getStartups } from "../controllers/organization.controller.js";
 import { Router } from "express";
 
 const router = Router();
