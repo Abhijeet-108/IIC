@@ -39,14 +39,14 @@ const organizationSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        index: true
+        // index: true
     },
     thrustArea: [{
         type: String,
     }],
     city:{
         type: String,
-        index: true
+        // index: true
     },
     address: {
         type: String,
@@ -58,7 +58,7 @@ const organizationSchema = new mongoose.Schema({
         type: [String],
         enum: ['ideation', 'validation', 'Early traction', 'scaling', 'maturity'],
         required: true,
-        index: true
+        // index: true
     },
     status: {
         type: String,

@@ -6,7 +6,7 @@ const BookChapterSchema = new mongoose.Schema({
       required: [true, "Book title is required"],
       trim: true,
       maxlength: [500, "Title cannot exceed 500 characters"],
-      index: true,
+      // index: true,
     },
 
     authors: {
@@ -28,7 +28,7 @@ const BookChapterSchema = new mongoose.Schema({
         },
         message: "Invalid ISBN format",
       },
-      index: true,
+      // index: true,
     },
 
     chapterName: {
@@ -36,7 +36,7 @@ const BookChapterSchema = new mongoose.Schema({
       required: [true, "Chapter name is required"],
       trim: true,
       maxlength: [300, "Chapter name cannot exceed 300 characters"],
-      index: true,
+      // index: true,
     },
 
     publisherName: {
@@ -44,7 +44,7 @@ const BookChapterSchema = new mongoose.Schema({
       required: [true, "Publisher name is required"],
       trim: true,
       maxlength: [200, "Publisher name cannot exceed 200 characters"],
-      index: true,
+      // index: true,
     },
 
     pageNo: {
@@ -62,7 +62,7 @@ const BookChapterSchema = new mongoose.Schema({
         new Date().getFullYear() + 10,
         "Year cannot be more than 10 years in the future",
       ],
-      index: true,
+      // index: true,
     },
 
     doiLink: {

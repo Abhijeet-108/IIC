@@ -6,7 +6,7 @@ const ConferenceSchema = new mongoose.Schema({
       required: [true, "Paper title is required"],
       trim: true,
       maxlength: [500, "Title cannot exceed 500 characters"],
-      index: true,
+      // index: true,
     },
 
     authors: {
@@ -26,7 +26,7 @@ const ConferenceSchema = new mongoose.Schema({
         },
         message: "Invalid ISSN format. Use format: XXXX-XXXX",
       },
-      index: true,
+      // index: true,
     },
 
     journalName: {
@@ -34,7 +34,7 @@ const ConferenceSchema = new mongoose.Schema({
       required: [true, "Journal name is required"],
       trim: true,
       maxlength: [300, "Journal name cannot exceed 300 characters"],
-      index: true,
+      // index: true,
     },
 
     publisherName: {
@@ -42,7 +42,7 @@ const ConferenceSchema = new mongoose.Schema({
       required: [true, "Publisher name is required"],
       trim: true,
       maxlength: [200, "Publisher name cannot exceed 200 characters"],
-      index: true,
+      // index: true,
     },
 
     issue: {
@@ -74,7 +74,7 @@ const ConferenceSchema = new mongoose.Schema({
         new Date().getFullYear() + 10,
         "Year cannot be more than 10 years in the future",
       ],
-      index: true,
+      // index: true,
     },
 
     doiLink: {

@@ -4,14 +4,14 @@ const EventSchema = new mongoose.Schema({
     date: {
       type: Date,
       required: [true, "Event date is required"],
-      index: true,
+      // index: true,
     },
 
     headline: {
       type: String,
       required: [true, "Event headline is required"],
       trim: true,
-      index: true,
+      // index: true,
     },
 
     description: {
@@ -27,7 +27,7 @@ const EventSchema = new mongoose.Schema({
         values: ["Notice", "Activity", "Meeting"],
         message: "Status must be one of: Notice, Activity, Meeting",
       },
-      index: true,
+      // index: true,
     },
 }, {collection: "events",});
 

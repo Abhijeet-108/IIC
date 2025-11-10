@@ -1,5 +1,7 @@
 import { 
     createResearchProfile, 
+    getAllResearchProfiles, 
+    getResearchProfileById, 
     getAllResearchProfiles,
     getResearchProfileByDesignation, 
     getResearchProfileByFacultyId,
@@ -12,11 +14,13 @@ import { Router } from "express";
 const router = Router();
 
 router.route("/")
+    .post(createResearchProfile)
     .post(upload.single("photograph"), createResearchProfile)
     .get(getAllResearchProfiles);
 
 router.route("/:id")
-    // .get(getResearchProfileById)
+    .get(getResearchProfileById)
+    .put(updateResearchProfile)
     .put(upload.single("photograph"), updateResearchProfile)
     .delete(deleteResearchProfile);
 

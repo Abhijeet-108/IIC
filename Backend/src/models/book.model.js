@@ -6,7 +6,7 @@ const BookSchema = new mongoose.Schema({
       required: true,
       trim: true,
       maxlength: 500,
-      index: true
+      // index: true
     },
     
     authors: {
@@ -27,7 +27,7 @@ const BookSchema = new mongoose.Schema({
         },
         message: 'Invalid ISBN format'
       },
-      index: true
+      // index: true
     },
     
     publisherName: {
@@ -35,7 +35,7 @@ const BookSchema = new mongoose.Schema({
       required: true,
       trim: true,
       maxlength: 200,
-      index: true
+     // index: true
     },
     
     year: {
@@ -43,7 +43,7 @@ const BookSchema = new mongoose.Schema({
       required: true,
       min: 1000,
       max: new Date().getFullYear() + 10,
-      index: true
+      // index: true
     },
     
     supportDocument: {
