@@ -5,7 +5,7 @@ import {
   getConferenceById,
   updateConference,
   deleteConference,
-} from "../controllers/conference.controllers.js";
+} from "../controllers/conference.controller.js";
 
 const router = express.Router();
 

@@ -23,7 +23,7 @@ import achievementRoutes from "./src/routes/achievement.route.js";
 import eventRoutes from "./src/routes/event.route.js";
 import patentRoutes from "./src/routes/patent.route.js";
 import journalRoutes from "./src/routes/journal.route.js";
-import conferenceRoutes from "./routes/conference.route.js";
+import conferenceRoutes from "./src/routes/conference.route.js";
 import organizationRoutes from "./src/routes/organization.route.js";
 import ResearchProfileRoutes from "./src/routes/researchProfile.route.js";
 
