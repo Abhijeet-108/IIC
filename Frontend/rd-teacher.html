@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Details - R&D</title>
+    <link rel="stylesheet" href="iic-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .teacher-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 20px 80px;
+        }
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            gap: 12px;
+        }
+        .teacher-header {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 30px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .teacher-photo-large {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 72px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .teacher-info h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .teacher-info .designation {
+            font-size: 20px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .teacher-info .department {
+            font-size: 18px;
+            color: var(--text-gray);
+        }
+        .details-section {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 30px;
+        }
+        .details-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .field-group {
+            margin-bottom: 20px;
+        }
+        .field-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .field-group .value {
+            font-size: 16px;
+            color: var(--text-dark);
+            padding: 12px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            word-break: break-word;
+        }
+        .field-group .value a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        .field-group .value a:hover {
+            text-decoration: underline;
+        }
+        .items-list {
+            display: grid;
+            gap: 20px;
+        }
+        .item-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue);
+        }
+        .item-card .item-field {
+            margin-bottom: 12px;
+        }
+        .item-card .item-field:last-child {
+            margin-bottom: 0;
+        }
+        .item-card .item-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+        .item-card .item-value {
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+        .item-card .item-value a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        .item-card .item-value a:hover {
+            text-decoration: underline;
+        }
+        .empty-message {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">IIC</span>
+                        <span class="logo-subtitle">Innovation Council</span>
+                    </div>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="iic-homepage.html#home" class="nav-link">Home</a></li>
+                    <li><a href="iic-homepage.html#about" class="nav-link">About</a></li>
+                    <li><a href="iic-homepage.html#mission" class="nav-link">Mission</a></li>
+                    <li><a href="iic-homepage.html#vision" class="nav-link">Vision</a></li>
+                    <li><a href="iic-homepage.html#activities" class="nav-link">Activities</a></li>
+                    <li><a href="rd.html" class="nav-link active">R&D</a></li>
+                    <li><a href="iic-homepage.html#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="teacher-details-container">
+        <a href="rd.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Departments</span>
+        </a>
+
+        <div id="teacherDetailsContent">
+            <!-- Content will be loaded by JavaScript -->
+        </div>
+    </div>
+
+    <script src="iic-script.js"></script>
+    <script src="rd-teacher-script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="iic-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .auth-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            padding: 40px 20px;
+        }
+        .auth-card {
+            width: 100%;
+            max-width: 720px;
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            padding: 32px;
+        }
+        .auth-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .auth-header .logo-icon {
+            margin: 0 auto 12px;
+        }
+        .auth-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+        .auth-subtitle {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-top: 6px;
+        }
+        .auth-form {
+            display: grid;
+            gap: 16px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+        .auth-footer {
+            margin-top: 20px;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        .auth-footer a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .form-message {
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+        }
+        .form-message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        .form-message.success {
+            display: block;
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo-icon"><i class="fas fa-lightbulb"></i></div>
+                <div class="auth-title">Create your account</div>
+                <div class="auth-subtitle">Fill the details to get started</div>
+            </div>
+
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="you@example.com" required>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Last name" required>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="form-group">
+                        <label for="collegeId">College ID</label>
+                        <input type="text" id="collegeId" placeholder="e.g., CSE20251234" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" required>
+                            <option value="">Select role</option>
+                            <option value="admin">Admin</option>
+                            <option value="faculty">Faculty</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" required>
+                        <option value="">Select department</option>
+                        <option>Computer Science & Engineering</option>
+                        <option>Computer Science & Engineering - AIML</option>
+                        <option>Computer Science & Engineering - DATA SCIENCE</option>
+                        <option>Computer Science & Engineering - CYBER SECURITY</option>
+                        <option>Computer Science & BUSINESS SYSTEM</option>
+                        <option>Computer Science & Engineering - IOT</option>
+                        <option>INFORMATION TECHNOLOGY</option>
+                        <option>ELECTRONICS & COMMUNICATION ENGINEERING</option>
+                        <option>CIVIL ENGINEERING</option>
+                        <option>MECHANICAL ENGINEERING</option>
+                        <option>ELECTRICAL ENGINEERING</option>
+                        <option>ELECTRONICS & INSTRUMENTATION ENGINEERING</option>
+                        <option>Computer Applications</option>
+                        <option>FOOD TECHNOLOGY</option>
+                        <option>MEDIA SCIENCE</option>
+                        <option>Business Studies</option>
+                        <option>HOSPITAL ADMINISTRATION</option>
+                        <option>HOSPITALITY MANAGEMENT</option>
+                        <option>Basic Science & Humanities</option>
+                        <option>Master in Business Administration</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary"><span>Create Account</span><i class="fas fa-arrow-right"></i></button>
+                <div id="signupMessage" class="form-message"></div>
+            </form>
+
+            <div class="auth-footer">
+                Already have an account?
+                <a href="login.html">Sign in</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        initSignup();
+    </script>
+</body>
+</html>
+
+
