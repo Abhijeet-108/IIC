@@ -6,13 +6,17 @@ import {
   updateAchievement,
   deleteAchievement,
 } from "../controllers/achievments.controller.js";
+import { upload } from "../middlewares/multer.middleware.js";
 
 const router = express.Router();
 
-router.post("/", createAchievement);
-router.get("/", getAllAchievements);
-router.get("/:id", getAchievementById);
-router.put("/:id", updateAchievement);
-router.delete("/:id", deleteAchievement);
+router.route("/")
+    .post(upload.array("photo"), createAchievement)
+    .get(getAllAchievements);
+    
+router.route("/:id")
+    .get(getAchievementById)
+    .put(upload.array("photo"), updateAchievement)
+    .delete(deleteAchievement);
 
 export default router;
